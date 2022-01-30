@@ -1,23 +1,9 @@
 import React, { useState } from 'react'
 import { Text, Box } from 'native-base'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
-import { render } from 'react-dom'
-
-const Movies = () => (
-    <Box width="100%">
-        <Text>Movies Tab</Text>
-    </Box>
-)
-const SearchResults = () => (
-    <Box width="100%">
-        <Text>Search Results Tab</Text>
-    </Box>
-)
-const TVShows = () => (
-    <Box width="100%">
-        <Text>TV Shows Tab</Text>
-    </Box>
-)
+import MoviesView from '../views/MoviesView'
+import TVShowsView from '../views/TVShowsView'
+import SearchView from '../views/SearchView'
 
 const renderLabel = ({ route }) => <Text color={'gray.900'}>{route.title}</Text>
 const renderTabBar = (props) => (
@@ -30,9 +16,9 @@ const renderTabBar = (props) => (
 )
 
 const renderScene = SceneMap({
-    movies: Movies,
-    searchResults: SearchResults,
-    tvShows: TVShows,
+    movies: MoviesView,
+    searchResults: SearchView,
+    tvShows: TVShowsView,
 })
 
 const HomeScreen = () => {
@@ -49,7 +35,6 @@ const HomeScreen = () => {
                 renderScene={renderScene}
                 renderTabBar={renderTabBar}
                 onIndexChange={setIndex}
-                initialLayout={{ width: '100%' }}
                 swipeEnabled={true}
             />
         </>
