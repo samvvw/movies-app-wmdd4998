@@ -11,8 +11,8 @@ export const MOVIES_OPTIONS = {
 
 export const SEARCH_OPTIONS = {
     movie: { value: 'movie', label: 'Movies' },
-    multi: { value: 'multi', label: 'All' },
     tv: { value: 'tv', label: 'TV Shows' },
+    multi: { value: 'multi', label: 'All' },
 }
 
 export const TV_SHOWS_OPTIONS = {

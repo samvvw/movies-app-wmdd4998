@@ -2,6 +2,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import HomeScreen from '../screens/HomeScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import SingleShow from '../screens/SingleShow'
 
 const Stack = createNativeStackNavigator()
 
@@ -21,6 +22,7 @@ const AppStack = () => (
                     },
                 }}
             />
+            <Stack.Screen name="Single" component={SingleShow} />
         </Stack.Navigator>
     </NavigationContainer>
 )
