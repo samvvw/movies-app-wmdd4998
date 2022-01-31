@@ -29,7 +29,7 @@ const HomeScreen = (props) => {
                     <ShowView
                         showType="movie"
                         showOptions={MOVIES_OPTIONS}
-                        defaultValue={MOVIES_OPTIONS.nowPlaying.value}
+                        defaultValue={MOVIES_OPTIONS.popular.value}
                         navigation={props.navigation}
                     />
                 )

@@ -7,6 +7,7 @@ const SelectOption = ({
     handleOption,
     selected,
     alignSelf,
+    setPagination,
     w,
     my,
 }) => {
@@ -15,7 +16,12 @@ const SelectOption = ({
             <Box w={w} alignSelf={alignSelf} my={my}>
                 <Select
                     selectedValue={selected}
-                    onValueChange={(itemValue) => handleOption(itemValue)}
+                    onValueChange={(itemValue) => {
+                        if (setPagination) {
+                            setPagination((prev) => ({ ...prev, page: 1 }))
+                        }
+                        handleOption(itemValue)
+                    }}
                     dropdownIcon={
                         <Icon
                             size={4}

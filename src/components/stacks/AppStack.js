@@ -22,7 +22,13 @@ const AppStack = () => (
                     },
                 }}
             />
-            <Stack.Screen name="Single" component={SingleShow} />
+            <Stack.Screen
+                name="Single"
+                component={SingleShow}
+                options={({ route }) => ({
+                    title: route.params.title,
+                })}
+            />
         </Stack.Navigator>
     </NavigationContainer>
 )

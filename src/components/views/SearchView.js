@@ -4,6 +4,7 @@ import ShowSearch from '../forms/ShowSearch'
 import { SEARCH_OPTIONS } from '../../config/config'
 import ShowList from '../lists/ShowList'
 import { fetchMovieApi } from '../../services/movieApiServices'
+import Loading from '../container/Loading'
 
 const SearchView = ({ navigation }) => {
     const [option, setOption] = useState(null)
@@ -64,7 +65,7 @@ const SearchView = ({ navigation }) => {
                     </Text>
                 </Box>
             ) : isLoading ? (
-                'Loading...'
+                <Loading />
             ) : (
                 <ShowList
                     shows={shows}

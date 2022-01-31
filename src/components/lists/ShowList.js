@@ -14,6 +14,7 @@ const ShowList = ({ shows, navigation }) => {
                     releaseDate={item.first_air_date}
                     navigation={navigation}
                     id={item.id}
+                    showType="tv"
                 />
             )
         } else if (keys.includes('release_date')) {
@@ -25,6 +26,7 @@ const ShowList = ({ shows, navigation }) => {
                     releaseDate={item.release_date}
                     navigation={navigation}
                     id={item.id}
+                    showType="movie"
                 />
             )
         } else if (keys.includes('known_for')) {
@@ -36,6 +38,7 @@ const ShowList = ({ shows, navigation }) => {
                     releaseDate={item.media_type}
                     navigation={navigation}
                     id={item.id}
+                    showType="person"
                 />
             )
         }
@@ -46,6 +49,7 @@ const ShowList = ({ shows, navigation }) => {
             renderItem={renderList}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
+            w="100%"
         />
     )
 }

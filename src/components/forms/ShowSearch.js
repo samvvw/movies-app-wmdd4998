@@ -14,6 +14,7 @@ import SelectOption from './SelectOption'
 const ShowSearch = ({
     options,
     handleOption,
+    setPagination,
     selected,
     handleInput,
     searchInput,
@@ -22,10 +23,10 @@ const ShowSearch = ({
     onSubmit,
 }) => {
     return (
-        <VStack width={'80%'} alignSelf={'center'} mt="10">
+        <VStack width={'80%'} alignSelf={'center'} my="3">
             <FormControl isRequired isInvalid={inputInvalid}>
                 <FormControl.Label>
-                    <Text fontSize="md">Search Movie/TV Show Name</Text>
+                    <Text fontSize="sm">Search Movie/TV Show Name</Text>
                 </FormControl.Label>
                 <Input
                     type="text"
@@ -49,7 +50,7 @@ const ShowSearch = ({
             </FormControl>
             <FormControl mt="3" isRequired isInvalid={optionInvalid}>
                 <FormControl.Label>
-                    <Text fontSize="md">Choose Search Type</Text>
+                    <Text fontSize="sm">Choose Search Type</Text>
                 </FormControl.Label>
                 <HStack justifyContent={'space-between'}>
                     <SelectOption
@@ -61,6 +62,7 @@ const ShowSearch = ({
                     />
                     <Button
                         onPress={onSubmit}
+                        size={'sm'}
                         startIcon={
                             <Icon as={Ionicons} name="ios-search" size={'sm'} />
                         }

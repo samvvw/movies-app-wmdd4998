@@ -9,6 +9,7 @@ const ShowCard = ({
     releaseDate,
     id,
     navigation,
+    showType,
 }) => {
     const imageSource = `https://image.tmdb.org/t/p/w300${image}`
     return (
@@ -27,15 +28,16 @@ const ShowCard = ({
                         maxW="90%"
                         isTruncated
                     >
-                        Title:{title}
+                        Title: {title}
                     </Text>
-                    <Text>Popularity:{popularity}</Text>
-                    <Text>Release Date:{releaseDate}</Text>
+                    <Text>Popularity: {popularity}</Text>
+                    <Text>Release Date: {releaseDate}</Text>
                     <Button
                         onPress={() => {
                             navigation.navigate('Single', {
                                 id,
                                 title,
+                                showType,
                             })
                         }}
                         w="90%"
